@@ -14,6 +14,7 @@ install-prod:
 # Format the code with black
 format:
     uv run black syncstream/ tests/
+    uv run ruff check syncstream/ tests/ --fix
 
 # Lint the code with bandit
 lint:

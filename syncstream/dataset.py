@@ -1,9 +1,10 @@
 import json
-import torch
+from pathlib import Path
+
 import cv2
 import numpy as np
 import pandas as pd
-from pathlib import Path
+import torch
 from torch.utils.data import Dataset
 from torchvision import transforms
 
@@ -76,8 +77,9 @@ def collate_fn(batch):
 
 
 if __name__ == "__main__":
-    from torch.utils.data import DataLoader
     from pathlib import Path
+
+    from torch.utils.data import DataLoader
 
     # 1. Initialize Dataset
     dataset = SyncStream3DDataset(index_file=Path("output/index.parquet"))
