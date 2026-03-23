@@ -1,0 +1,1 @@
+# To help with correctly importing main.py and its dependencies in the test files, we can add a conftest.py file in the tests directory. This file will modify the sys.path to include the project root, allowing us to import main and other modules without issues.

@@ -1,0 +1,17 @@
+services:
+  converter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      # Map local data folder to container data folder (Read-Only)
+      - ./data:/app/data:ro
+      # Map local output folder to container output folder (Read-Write)
+      - ./output:/app/output
+    # Override the default CMD to use your specific main.py arguments
+    command: >
+      uv run python main.py
+      --input /app/data/kitti.mcap
+      --output /app/output
+      --workers 4
+      --threshold 20.0

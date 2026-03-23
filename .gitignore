@@ -1,0 +1,50 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.env
+pip-log.txt
+pip-delete-this-directory.txt
+.installed.cfg
+.installed.cfg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+*.whl
+
+# --- Project Specific (Data Storage) ---
+# Ignore the output directories where you save converted files
+# Adjust these names if they differ in your local setup
+output/
+data/images/
+data/lidar/
+*.npy
+*.jpg
+*.parquet
+
+# --- ROS2 / MCAP ---
+# Ignore raw log files and middleware artifacts
+*.mcap
+*.db3
+*.bag
+.ros/
+
+# --- Great Expectations ---
+# Ignore the uncommitted directory which contains local-only config and docs
+great_expectations/uncommitted/
+# If using Ephemeral context, GX might create temp artifacts
+.gx/
+
+# --- IDEs / Editors ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# --- Logging ---
+*.log

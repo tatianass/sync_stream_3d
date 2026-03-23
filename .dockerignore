@@ -1,0 +1,12 @@
+# Ignore heavy data
+*.mcap
+*.db3
+output/
+data/
+
+# Ignore local environment
+.venv/
+__pycache__/
+.git/
+.gx/uncommitted/
+.gx/

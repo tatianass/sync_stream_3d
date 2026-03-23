@@ -1,0 +1,68 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sync-stream-3d"
+version = "0.1.0"
+description = "Efficient 2GB MCAP to PyTorch pipeline"
+requires-python = "==3.10.19"
+license = "MIT"
+dependencies = [
+    "mcap>=1.3.1",
+    "mcap-ros2-support>=0.5.7",
+    "pandas>=2.0.0",
+    "pyarrow>=12.0.0",
+    "opencv-python>=4.7.0",
+    "numpy>=1.24.0",
+    "imageio>=2.31.0",
+    "torch",
+    "pillow",
+    "pydantic",
+    "great_expectations",
+    "torchvision"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["syncstream"]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "black",
+    "bandit",
+    "pre-commit",
+    "ruff",
+    "matplotlib"
+]
+
+# coverage config
+[tool.coverage.paths]
+source = ["syncstream"]
+
+[tool.coverage.run]
+branch = true
+relative_files = true
+
+# linting config
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.pyright]
+include = ["syncstream", "tests"]
+exclude = ["**/__pycache__"]
+
+venv = ".venv"
+venvPath = "."
+
+executionEnvironments = [
+  { root = "syncstream" },
+  { root = "tests", extraPaths = [
+    "syncstream",
+  ] },
+]
