@@ -114,3 +114,4 @@ night_dataset.df = night_samples
 ### Data Quality & Tagging
 * **Luminance Analysis:** Automated tagging for "night/dark" scenes uses an RMS (Root Mean Square) pixel intensity threshold, allowing for easy dataset filtering for low-light training.
 * **Motion Guard:** Uses frame-to-frame variance to tag "high-motion" blur, helping to exclude low-quality samples from the training set.
+
